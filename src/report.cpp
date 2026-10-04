@@ -14,7 +14,8 @@ void print_report(const Station* stations, const double* temps, int rows, int co
     
     std::cout << std::left << std::setw(15) << "Station"
               << std::setw(12) << "Elev(ft)";
-    for (int c = 0; c < cols; ++c) {
+
+
         std::cout << "Day " << std::left << std::setw(6) << (c + 1);
     }
     std::cout << std::setw(10) << "Average" << "\n";
@@ -26,7 +27,7 @@ void print_report(const Station* stations, const double* temps, int rows, int co
 
         for (int c = 0; c < cols; ++c) {
             int idx = grid_index(r, c, cols);
-            std::cout << std::setw(10) << temps[idx];
+            std::cout << std::setw(10) << temps[i];
         }
 
         double avg = 0.0;
@@ -40,7 +41,7 @@ void print_report(const Station* stations, const double* temps, int rows, int co
     int hot_row = -1;
     int hot_col = -1;
     if (find_hottest(temps, rows, cols, hot_row, hot_col)) {
-        int idx = grid_index(hot_row, hot_col, cols);
+        int i = grid_index(hot_row, hot_col, cols);
         std::cout << "\nHottest: " << stations[hot_row].name
                   << " on Day " << (hot_col + 1)
                   << " (" << temps[i] << " deg F)\n";
