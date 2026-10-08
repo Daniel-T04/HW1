@@ -29,10 +29,10 @@ int main() {
 
     //Count and output temperature reading striclty above 95.0 degrees
     int above_95 = count_above(temps, station_count, day_count, 95.0);
-    std::cout << "\nReadings above 95.0 deg F: " << above_95 << "\n\n";
+    std::cout << "Readings above 95.0 F: " << above_95 << "";
 
     // Prompts user for interactive stations 
-    std::cout << "Enter station name: ";
+    std::cout << "Station to look up: ";
     std::string input_name;
     std::getline(std::cin, input_name);
 
@@ -47,11 +47,11 @@ int main() {
         
         //Calculate and print the average temperature for matched station
         if (station_average(temps, station_count, day_count, row_index, avg)) {
-            std::cout << matched_station->name << " average: " << avg << " deg F\n";
+           std::cout << matched_station->name << " average: " << avg << " F";
         }
     } else {
-        std::cout << "Station not found.\n";
-    }
+        std::cout << "No station named \"" << input_name << "\".\n";
+ }
 
     return 0;
 }   
