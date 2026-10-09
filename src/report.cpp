@@ -1,3 +1,4 @@
+#include <iostream>
 #include <iomanip>
 #include "report.h"
 #include "analysis.h"
@@ -6,7 +7,7 @@
 void print_report(const Station* stations, const double* temps, int rows, int cols) {
      std::cout <<  "=== Weather Station Report ===\n";
     
-        int row = 0; 
+        
     for (int row = 0; row < rows; ++row){
         double avg = 0.0;
         if(station_average(temps, rows, cols, row, avg)) {
