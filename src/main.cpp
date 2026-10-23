@@ -48,7 +48,7 @@ int main() {
         
         //Calculate and print the average temperature for matched station
         if (station_average(temps, station_count, day_count, row_index, avg)) {
-           std::cout << matched_station->name << " average: " << std::fixed << std:setprecision(1) avg << " F.\n";
+   std::cout << matched_station->name << " average: " << std::fixed << std::setprecision(1) << avg << " F.\n";
         }
     } else {
         std::cout << "No station named \"" << input_name << "\".\n";
